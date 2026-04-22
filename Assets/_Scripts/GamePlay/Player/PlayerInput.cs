@@ -1,14 +1,30 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
     public Vector2 Direction { get; private set; }
-    private int horizontalInput;
-    private int verticalInput;
+    private float horizontalInput;
+    private float verticalInput;
+    public Joystick joystick;
+
+    private void Awake()
+    {
+    }
+
     private void Update()
     {
-        horizontalInput = (int)Input.GetAxisRaw("Horizontal");
-        verticalInput = (int)Input.GetAxisRaw("Vertical");
-        Direction = new Vector2(horizontalInput, verticalInput).normalized;
+        if (joystick != null)
+        {
+            horizontalInput = joystick.Horizontal;
+            verticalInput = joystick.Vertical;
+            Direction = new Vector2(horizontalInput, verticalInput).normalized;
+        }
+        else
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            Direction = new Vector2(horizontalInput, verticalInput).normalized;
+        }
     }
 }
