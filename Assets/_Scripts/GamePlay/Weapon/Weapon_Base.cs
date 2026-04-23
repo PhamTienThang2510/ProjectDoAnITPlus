@@ -1,13 +1,8 @@
 using UnityEngine;
 
-public class Weapon_Base : MonoBehaviour
+public abstract class Weapon_Base : MonoBehaviour
 {
-    public WeaponType weaponType;
-
-}
-
-public enum WeaponType
-{
-    main,
-    sub
+    public int CurrentLevel;
+    public abstract void Init();
+    public abstract void Upgrade();
 }
