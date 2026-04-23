@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c60205af0c872d49ab608f487ca1064, type: 3}
-  m_Name: KnifeSO
+  m_Name: Knife
   m_EditorClassIdentifier: Assembly-CSharp::WeaponMainSO
   weaponLevels:
   - {fileID: 11400000, guid: 56c0ff07bafc98145a97b6c08b1fbb72, type: 2}
-  - {fileID: 11400000, guid: 936926a7cae2762438b97086dfeae85a, type: 2}
-  weaponSubs: {fileID: 0}
+  weaponSubs: {fileID: 11400000, guid: c4c358d071363444ab778d36950aeced, type: 2}

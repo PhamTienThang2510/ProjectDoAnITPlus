@@ -6,13 +6,14 @@ using UnityEngine;
 public class WeaponMainSO : ScriptableObject
 {
     public List<WeaponLevel> weaponLevels;
-    public WeaponSub weaponSubs;
+    public WeaponSubSO weaponSubs;
 }
 
 [CreateAssetMenu(fileName = "WeaponLevel", menuName = "Scriptable Objects/WeaponLevel")]
 public class WeaponLevel : ScriptableObject
 {
     public int level;
+    public float speed;
     public float damage;
     public float cooldown;
     public float range;

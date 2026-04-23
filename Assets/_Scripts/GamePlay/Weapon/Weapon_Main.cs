@@ -8,6 +8,8 @@ public abstract class Weapon_Main : Weapon_Base
     protected float Range => weaponData.weaponLevels[CurrentLevel].range;
     protected float Cooldown => weaponData.weaponLevels[CurrentLevel].cooldown;
 
+    protected float speed => weaponData.weaponLevels[CurrentLevel].speed;
+
     protected float lastAttackTime;
 
     public override void Init()

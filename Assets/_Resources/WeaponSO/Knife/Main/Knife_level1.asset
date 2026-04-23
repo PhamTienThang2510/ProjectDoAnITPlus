@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Knife_level1
   m_EditorClassIdentifier: Assembly-CSharp::WeaponLevel
   level: 1
-  damage: 10
-  cooldown: 5
-  range: 10
+  speed: 5
+  damage: 5
+  cooldown: 2
+  range: 0

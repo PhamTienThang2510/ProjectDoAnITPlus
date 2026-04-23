@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    public static PlayerInput Instance { get; private set; }
     public Vector2 Direction { get; private set; }
     private float horizontalInput;
     private float verticalInput;
@@ -10,6 +11,14 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()

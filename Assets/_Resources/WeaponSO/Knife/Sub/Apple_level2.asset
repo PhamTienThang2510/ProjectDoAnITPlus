@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Apple_level2
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSub
-  level: 0
+  level: 2
   typeWeaponSub: 0
-  bonus: 0
+  bonus: 10

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSub
   level: 1
   typeWeaponSub: 0
-  bonus: 1
+  bonus: 10
