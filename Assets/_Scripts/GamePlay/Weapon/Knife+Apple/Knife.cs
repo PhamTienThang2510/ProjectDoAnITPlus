@@ -1,3 +1,4 @@
+using MyPooler;
 using UnityEngine;
 
 public class Knife : Weapon_Main
@@ -8,15 +9,6 @@ public class Knife : Weapon_Main
     private void Update()
     {
         base.Update();
-
-        // Cập nhật lastDir nếu có input
-        Vector2 inputDir = PlayerInput.Instance.Direction;
-        if (inputDir != Vector2.zero)
-        {
-            lastDir = inputDir.normalized;
-        }
-
-        transform.position += (Vector3)(moveDir * speed * Time.deltaTime);
     }
 
     protected override void Attack()
@@ -26,5 +18,18 @@ public class Knife : Weapon_Main
         // Nếu đang đứng yên → dùng lastDir
         moveDir = inputDir != Vector2.zero ? inputDir.normalized : lastDir;
 
+        SpawnKnife(moveDir);
+    }
+
+    private void SpawnKnife(Vector2 dir)
+    {
+        GameObject obj = ObjectPooler.Instance.GetFromPool(
+            weaponData.weaponId,   // ví dụ: "Knife"
+            positionSpawn.position,
+            Quaternion.identity
+        );
+
+        Projective knife = obj.GetComponent<Projective>();
+        knife.Init(dir, Damage, speed);
     }
 }

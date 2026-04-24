@@ -1,3 +1,4 @@
+using MyPooler;
 using UnityEngine;
 
 public abstract class Weapon_Main : Weapon_Base
@@ -10,8 +11,14 @@ public abstract class Weapon_Main : Weapon_Base
 
     protected float speed => weaponData.weaponLevels[CurrentLevel].speed;
 
+    public Transform positionSpawn;
+
     protected float lastAttackTime;
 
+    private void Awake()
+    {
+        positionSpawn = transform.Find("WeaponHolder");
+    }
     public override void Init()
     {
         lastAttackTime = 0;
@@ -20,12 +27,11 @@ public abstract class Weapon_Main : Weapon_Base
     protected virtual void Update()
     {
         if (Time.time >= lastAttackTime + Cooldown)
-        {
+        {   
             Attack();
             lastAttackTime = Time.time;
         }
     }
-
     protected abstract void Attack();
 
     public override void Upgrade()

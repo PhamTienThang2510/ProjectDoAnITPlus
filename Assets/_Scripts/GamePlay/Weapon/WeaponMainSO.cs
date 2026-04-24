@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponMainSO", menuName = "Scriptable Objects/WeaponMainSO")]
 public class WeaponMainSO : ScriptableObject
 {
+    public string weaponId;
     public List<WeaponLevel> weaponLevels;
     public WeaponSubSO weaponSubs;
 }
