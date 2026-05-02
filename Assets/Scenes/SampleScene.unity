@@ -1573,6 +1573,7 @@ MonoBehaviour:
   - {fileID: 1162919766}
   - {fileID: 1685146503}
   Indicator: {fileID: 1239203953}
+  animationOutBack: 1.5
 --- !u!1 &1115645019
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,6 @@
+using DG.Tweening;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +10,7 @@ public class BottomNavigation : MonoBehaviour
     [SerializeField] private List<GameObject> GroupPanels;
     [SerializeField] private List<Button> GroupButtons;
     [SerializeField] private GameObject Indicator;
+    public float animationOutBack = 0.3f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,7 +51,16 @@ public class BottomNavigation : MonoBehaviour
         {
             GroupPanels[index].SetActive(true);
             // Move the indicator to the selected button
-            Indicator.transform.localPosition = new Vector3(GroupButtons[index].transform.localPosition.x, Indicator.transform.localPosition.y, 0);
+
+            AnimationButton(index);
         }
+    }
+
+    private void AnimationButton(int index)
+    {
+        Indicator.transform.DOLocalMove(
+            new Vector3(GroupButtons[index].transform.localPosition.x, Indicator.transform.localPosition.y, 0),
+            0.3f
+            ).SetEase(Ease.InOutBack, animationOutBack);
     }
 }
