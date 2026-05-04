@@ -8,6 +8,8 @@ public class WeaponMainSO : ScriptableObject
     public string weaponId;
     public List<WeaponLevel> weaponLevels;
     public WeaponSubSO weaponSubs;
+    public WeaponEvo weaponEvo;
+    public Rate rate;
 }
 
 [CreateAssetMenu(fileName = "WeaponLevel", menuName = "Scriptable Objects/WeaponLevel")]
@@ -32,6 +34,15 @@ public class WeaponSubSO : ScriptableObject
 {
     public List<WeaponSub> weaponSubLevels;
 }
+
+[CreateAssetMenu(fileName = "WeaponEvo", menuName = "Scriptable Objects/WeaponEvo")]
+public class WeaponEvo : ScriptableObject
+{
+    public int requiredLevel;
+    public WeaponMainSO evolvedForm;
+
+}
+
 public enum TypeWeaponSub
 {
     speed,
@@ -39,4 +50,11 @@ public enum TypeWeaponSub
     cooldown,
     criticalChance,
     hp
+}
+
+public enum Rate
+{
+    Common,
+    Rare,
+    Epic
 }
