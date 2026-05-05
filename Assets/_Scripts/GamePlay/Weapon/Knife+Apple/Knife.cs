@@ -1,35 +1,51 @@
-using MyPooler;
 using UnityEngine;
 
 public class Knife : Weapon_Main
 {
-    private Vector2 moveDir;
-    private Vector2 lastDir = Vector2.right; // fallback mặc định
+    private KnifeController knifeController;
+    private Vector2 lastDir = Vector2.right;
 
-    private void Update()
+    protected override void Awake()
     {
-        base.Update();
+        base.Awake();
+        
+        knifeController = GetComponent<KnifeController>();
+        
+        if (knifeController == null)
+        {
+            knifeController = gameObject.AddComponent<KnifeController>();
+        }
+        
+        if (weaponData != null)
+        {
+            knifeController.SetWeaponData(weaponData);
+        }
+        
+        if (positionSpawn != null)
+        {
+            knifeController.SetSpawnPoint(positionSpawn);
+        }
     }
 
     protected override void Attack()
     {
         Vector2 inputDir = PlayerInput.Instance.Direction;
+        Vector2 moveDir = inputDir != Vector2.zero ? inputDir.normalized : lastDir;
+        lastDir = moveDir;
 
-        // Nếu đang đứng yên → dùng lastDir
-        moveDir = inputDir != Vector2.zero ? inputDir.normalized : lastDir;
-
-        SpawnKnife(moveDir);
+        if (knifeController != null)
+        {
+            knifeController.SpawnKnife(moveDir);
+        }
     }
 
-    private void SpawnKnife(Vector2 dir)
+    public override void Init()
     {
-        GameObject obj = ObjectPooler.Instance.GetFromPool(
-            weaponData.weaponId,   // ví dụ: "Knife"
-            positionSpawn.position,
-            Quaternion.identity
-        );
-
-        Projective knife = obj.GetComponent<Projective>();
-        knife.Init(dir, Damage, speed);
+        base.Init();
+        
+        if (weaponData != null && knifeController != null)
+        {
+            knifeController.SetWeaponData(weaponData);
+        }
     }
 }

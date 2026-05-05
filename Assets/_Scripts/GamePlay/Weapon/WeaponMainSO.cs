@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,9 @@ public class WeaponMainSO : ScriptableObject
     public WeaponSubSO weaponSubs;
     public WeaponEvo weaponEvo;
     public Rate rate;
+    
+    // New: Specify which behavior to use for this weapon
+    public KnifeBehaviorType defaultBehaviorType = KnifeBehaviorType.Straight;
 }
 
 [CreateAssetMenu(fileName = "WeaponLevel", menuName = "Scriptable Objects/WeaponLevel")]
@@ -29,6 +31,7 @@ public class WeaponSub : ScriptableObject
     public TypeWeaponSub typeWeaponSub;
     public float bonus;
 }
+
 [CreateAssetMenu(fileName = "WeaponSubSO", menuName = "Scriptable Objects/WeaponSubSO")]
 public class WeaponSubSO : ScriptableObject
 {
@@ -40,7 +43,6 @@ public class WeaponEvo : ScriptableObject
 {
     public int requiredLevel;
     public WeaponMainSO evolvedForm;
-
 }
 
 public enum TypeWeaponSub
@@ -57,4 +59,12 @@ public enum Rate
     Common,
     Rare,
     Epic
+}
+
+// New enum for behavior types
+public enum KnifeBehaviorType
+{
+    Straight,
+    Boomerang,
+    Spiral
 }
