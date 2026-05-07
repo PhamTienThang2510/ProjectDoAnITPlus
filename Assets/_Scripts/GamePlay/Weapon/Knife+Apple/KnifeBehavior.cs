@@ -1,4 +1,5 @@
 using UnityEngine;
+using MyPooler;
 
 public abstract class KnifeBehavior : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public abstract class KnifeBehavior : MonoBehaviour
     protected float range;
     protected Vector2 startPosition;
     protected bool isActive = false;
+
 
     public virtual void Init(Vector2 dir, float dmg, float spd, float rng)
     {

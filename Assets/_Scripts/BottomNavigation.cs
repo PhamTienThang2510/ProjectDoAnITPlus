@@ -165,7 +165,7 @@ public class BottomNavigation : MonoBehaviour
         if (_buttonIcons[index] != null)
         {
             _buttonIcons[index].DOKill();
-            _buttonIcons[index].DOScale(new Vector3(1.2f, 1.2f, 1f), 0.3f).SetEase(Ease.OutBack);
+            _buttonIcons[index].DOScale(new Vector3(1.5f, 1.5f, 1f), 0.3f).SetEase(Ease.OutBack);
         }
 
         // Animate selected button's text: move up, scale up, fade in
