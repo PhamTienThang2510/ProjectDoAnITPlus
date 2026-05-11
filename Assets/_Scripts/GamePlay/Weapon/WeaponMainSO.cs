@@ -8,14 +8,6 @@ public class WeaponMainSO : ScriptableObject
     public string weaponId;
     public List<WeaponLevel> weaponLevels;
     public WeaponSubSO weaponSubs;
-<<<<<<< Updated upstream
-=======
-    public WeaponEvo weaponEvo;
-    public Rate rate;
-    
-    // New: Specify which behavior to use for this weapon
-    public WeaponBehaviorType defaultBehaviorType = WeaponBehaviorType.Straight;
->>>>>>> Stashed changes
 }
 
 [CreateAssetMenu(fileName = "WeaponLevel", menuName = "Scriptable Objects/WeaponLevel")]
@@ -47,23 +39,4 @@ public enum TypeWeaponSub
     cooldown,
     criticalChance,
     hp
-<<<<<<< Updated upstream
 }
-=======
-}
-
-public enum Rate
-{
-    Common,
-    Rare,
-    Epic
-}
-
-// New enum for behavior types
-public enum WeaponBehaviorType
-{
-    Straight,
-    Boomerang,
-    Spiral
-}
->>>>>>> Stashed changes

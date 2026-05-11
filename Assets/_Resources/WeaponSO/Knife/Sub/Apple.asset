@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: KnifeLevel1
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponLevel
-  level: 1
-  speed: 3
-  damage: 10
-  cooldown: 2
-  range: 0
+  m_Name: Apple
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSubSO
+  weaponSubLevels:
+  - {fileID: 11400000, guid: 544525d0c623d50459bc5e43f0feeaba, type: 2}
+  - {fileID: 11400000, guid: 4cae65978c4a4914b9562a3c5dc05060, type: 2}
