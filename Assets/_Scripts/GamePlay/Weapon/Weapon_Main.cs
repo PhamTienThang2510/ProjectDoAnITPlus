@@ -15,7 +15,7 @@ public abstract class Weapon_Main : Weapon_Base
 
     protected float lastAttackTime;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         positionSpawn = transform.Find("WeaponHolder");
     }
