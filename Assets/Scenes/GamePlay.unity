@@ -212,6 +212,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c964187e9f3a38346a90ad9969af6cfe, type: 3}
+--- !u!1 &243051334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1095152187585240931, guid: bdcb026bed3a8df41835226f02a57d49, type: 3}
+  m_PrefabInstance: {fileID: 1767147609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &243051336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243051334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6c29325723907458e74511cb8a0f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSpawner
+  weaponSO: {fileID: 11400000, guid: 5bf476a948a8e824199a10032886418b, type: 2}
+  knifePrefab: {fileID: 347343391108480172, guid: d1bf21140b5dd224689bdfdcc9862613, type: 3}
 --- !u!1 &449175453
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +710,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1095152187585240931, guid: bdcb026bed3a8df41835226f02a57d49, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 243051336}
   m_SourcePrefab: {fileID: 100100000, guid: bdcb026bed3a8df41835226f02a57d49, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
